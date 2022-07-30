@@ -6,7 +6,7 @@ from drfbackend.settings.common import set_django_settings
 from pathlib import Path
 from os.path import join
 from dotenv import load_dotenv
-dotenv_path = join(Path(__file__).parent.parent, '.env')
+dotenv_path = join(Path(__file__).parent, '.env')
 load_dotenv(dotenv_path)
 
 def main():
