@@ -2,11 +2,16 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from drfbackend.settings.common import set_django_settings
+from pathlib import Path
+from os.path import join
+from dotenv import load_dotenv
+dotenv_path = join(Path(__file__).parent.parent, '.env')
+load_dotenv(dotenv_path)
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'drfbackend.settings')
+    set_django_settings()
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
